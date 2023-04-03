@@ -4,7 +4,6 @@ import { Loader } from './Loader/Loader';
 // import { ImageGalleryItem } from './ImageGalleryItem/ImageGalleryItem';
 import { Modal } from './Modal/Modal';
 import { Searchbar } from './Searchbar/Searchbar';
-import { Component } from 'react';
 import './styles.css';
 import { useState, useEffect } from 'react';
 
@@ -13,7 +12,6 @@ import { getPosts } from './Server/server';
 export const App = () => {
   const [hits, setHits] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(1);
   const [imageModal, setImageModal] = useState('');
@@ -33,7 +31,6 @@ export const App = () => {
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
-        setIsError(true);
       }
     };
 
